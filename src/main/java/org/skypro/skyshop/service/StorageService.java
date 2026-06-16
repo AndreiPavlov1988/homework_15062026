@@ -9,6 +9,7 @@ import org.skypro.skyshop.model.search.Searchable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.Optional;
 
 @Service
 public class StorageService {
@@ -59,5 +60,8 @@ public class StorageService {
         // Добавляем все статьи (Article implements Searchable)
         result.addAll(articles.values());
         return result;
+    }
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(products.get(id));
     }
 }
