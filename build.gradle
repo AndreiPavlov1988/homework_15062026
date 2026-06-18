@@ -26,3 +26,15 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Зависимости для тестирования
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core'
+	testImplementation 'org.mockito:mockito-junit-jupiter'
+}
+
+test {
+	useJUnitPlatform()
+}
